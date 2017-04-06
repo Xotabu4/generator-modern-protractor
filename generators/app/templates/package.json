@@ -1,0 +1,20 @@
+{
+  "name": "<%=testProjectName%>",
+  "version": "1.0.0",
+  "scripts": {
+    "postinstall": "webdriver-manager update && tsc",
+    "test": "(cd config/ ; protractor)",
+    "tsc": "tsc",
+    "tscw": "tsc -w"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^2.5.38",
+    "@types/node": "^7.0.0",
+    "jasmine-protractor-matchers": "^1.0.1",
+    "jasmine2-reporter": "^0.3.0",
+    "jasmine-reporters": "^2.2.1",
+    "protractor": "^5.1.1",
+    "protractor-element-extend": "^2.0.1",
+    "typescript": "^2.2.2"
+  }
+}
