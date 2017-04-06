@@ -12,14 +12,13 @@ describe('Verifying project generation ', function () {
     })
 
     it('Checking that created project can start and communicate with browser', async function () {
-        // Stub for your tests
         await expect($$('div').first()).toAppear('Atleast one div should appear on the page')
     })
 
     afterAll(()=> {
         console.warn(`
-            If all tests are passed, and no errors in console - this means you are good to go! 
-            Just remove this example tests from specs/homepage.spec.ts file
+            If all test is passed, and no errors in console - this means you are good to go! 
+            Just remove this describe block from specs/homepage.spec.ts file. And start writing your tests!
 
             Please check README.md in generated project for future details
         `)

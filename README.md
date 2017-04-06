@@ -22,8 +22,13 @@ First, install [Yeoman](http://yeoman.io) and generator-modern-protractor using 
 npm install -g yo
 npm install -g generator-modern-protractor
 ```
+Make new folder for your project, and open it:
+```bash
+mkdir my-shiny-automation-project
+cd my-shiny-automation-project
+```
 
-Then generate your new project:
+Then generate your new project (will be unpacked in current location, no subfolder):
 
 ```bash
 yo modern-protractor
