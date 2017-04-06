@@ -1,7 +1,20 @@
 # generator-modern-protractor [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
-> Yeoman generator for protractorJS projects, with TypeScript, async/await, PageFragments, nice console and junit.xml output, screenshots on failure, JasmineJS, matchers for elements, and docker-containers support, and more.
 
-## Installation
+> Yeoman generator for ProtractorJS projects. Generates new project with ProtractorJS using most modern and shiny approaches.
+
+## Whats inside?
+- ProtractorJS 5.1.1
+- TypeScript 2.2
+- JasmineJS (as Protractor 5.1.1 dependency)
+- Async/Await support, WebdriverJS ControlFlow is disabled
+- PageObjects using [ES6 classes](http://es6-features.org/#ClassDefinition)
+- PageFragments (Components) using [protractor-element-extend](https://github.com/Xotabu4/protractor-element-extend) library
+- Additional [jasmine-protractor-matchers](https://github.com/Xotabu4/jasmine-protractor-matchers) to verify elements visibility easily
+- Reporting made possible by nice [console reporter](https://github.com/razvanz/jasmine2-reporter) and [junit.xml reporter](https://github.com/larrymyers/jasmine-reporters) (to provide test results to your CI system)
+- If you are using Visual Studio Code IDE - debug with TypeScript compilation is configured
+- Post conditions are added - wiping cookies, local and session storage after each test
+
+## Installation and generation of project
 
 First, install [Yeoman](http://yeoman.io) and generator-modern-protractor using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
@@ -16,19 +29,16 @@ Then generate your new project:
 yo modern-protractor
 ```
 
+Feel free to [learn more about Yeoman](http://yeoman.io/).
 
-## Getting To Know Yeoman
+### Made possible, and developed by Ciklum Testing Center of Excellence
+We love Open Source!
 
- * Yeoman has a heart of gold.
- * Yeoman is a person with feelings and opinions, but is very easy to work with.
- * Yeoman can be too opinionated at times but is easily convinced not to be.
- * Feel free to [learn more about Yeoman](http://yeoman.io/).
+![Ciklum][ciklum-image]
 
-## License
+http://www.ciklum.com
 
-MIT © [Oleksandr Khotemskyi](https://xotabu4.github.io)
-
-
+[ciklum-image]: https://www.ciklum.com/ciklum-brand/ciklum-logo.png
 [npm-image]: https://badge.fury.io/js/generator-modern-protractor.svg
 [npm-url]: https://npmjs.org/package/generator-modern-protractor
 [travis-image]: https://travis-ci.org/Xotabu4/generator-modern-protractor.svg?branch=master
