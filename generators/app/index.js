@@ -2,34 +2,35 @@
 const Generator = require('yeoman-generator');
 const chalk = require('chalk');
 
-let tractor = `    
-          ▓▓▓▓▓▓▓▓▓▓
-          ▓░░▓░░░░▓   ▒
-          ▓░░▓░░░░▓   ▒
-          ▓░░▓░░░░▓▓  ▒
-          ▓░░▓░░░░░▓  ▒
-          ▓░░▓░░░░░▓  ▒
-         ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-        ▓▓████▓▓▒▒▓████▓▓▓▓▓
-        ▓██████▓▓▒▒▒▓▓▓▓▓▓▓▓▓▓
-        ███▒▒███▓▒▒▒▓▓▓▓▓▓▓▓▓▓
-        ██▒▒▒▒██▓▓▓▓▓▓▓▓███▓▓▓
-        ███▒▒███       █▒▒▒█
-         ██████        █▒▒▒█
-          ████          ███
+let welcome = `    
+╔╦╗┌─┐┌┬┐┌─┐┬─┐┌┐┌                 
+║║║│ │ ││├┤ ├┬┘│││                 
+╩ ╩└─┘─┴┘└─┘┴└─┘└┘                 
+╔═╗┬─┐┌─┐┌┬┐┬─┐┌─┐┌─┐┌┬┐┌─┐┬─┐ ╦╔═╗
+╠═╝├┬┘│ │ │ ├┬┘├─┤│   │ │ │├┬┘ ║╚═╗
+╩  ┴└─└─┘ ┴ ┴└─┴ ┴└─┘ ┴ └─┘┴└─╚╝╚═╝
+╔═╗┌─┐┌┐┌┌─┐┬─┐┌─┐┌┬┐┌─┐┬─┐        
+║ ╦├┤ │││├┤ ├┬┘├─┤ │ │ │├┬┘        
+╚═╝└─┘┘└┘└─┘┴└─┴ ┴ ┴ └─┘┴└─                  
+**************************************************
+Github Repo (questions, suggestions, bugs):
+https://github.com/Xotabu4/generator-modern-protractor
 
-PROTRACTORJS + TYPESCRIPT + ASYNC/AWAIT yeoman generator!           
-**************************************************`;
-
-module.exports = class extends Generator {
-  prompting() {
-    this.log(tractor);
-    this.log(
-      `             ${chalk.bold('HELLO!')}
+Made possible thanks to 
+https://www.ciklum.com/
+Ciklum loves Open Source!
+**************************************************
 
 This ${chalk.bold('generator-modern-protractor')} will create new and shiny protractorjs automation project in current folder!
 
-`);
+
+
+
+`;
+
+module.exports = class extends Generator {
+  prompting() {
+    this.log(welcome);
     var prompts = [
       {
         type: 'input',
@@ -60,23 +61,6 @@ This ${chalk.bold('generator-modern-protractor')} will create new and shiny prot
 
   writing() {
     console.log('Props are:', this.props);
-    // This.log('Copying project files');
-    // this.fs.copyTpl(
-    //   this.templatePath(`package.json`),
-    //   this.destinationPath(`package.json`),
-    //   this.props
-    // );
-
-    // this.fs.copyTpl(
-    //   this.templatePath(`README.md`),
-    //   this.destinationPath(`README.md`),
-    //   this.props
-    // );
-
-    // this.fs.copy(
-    //   this.templatePath(`tsconfig.json`),
-    //   this.destinationPath(`tsconfig.json`)
-    // );
 
     this.fs.copy(
       this.templatePath(`gitignore`),
@@ -105,6 +89,10 @@ This ${chalk.bold('generator-modern-protractor')} will create new and shiny prot
   }
 
   end() {
-    this.log('Thats it! Finished!');
+    this.log(
+      `Project generation is finished. 
+    If you saw Chrome Browser was opened and closed, and no errors in console log - this means you are good to go!
+    Please check README.md in generated project for details.
+    `);
   }
 };
