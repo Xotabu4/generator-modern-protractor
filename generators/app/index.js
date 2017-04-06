@@ -96,10 +96,13 @@ module.exports = class extends Generator {
   }
 
   end() {
-    this.log(
-      `Project generation is finished. 
-    If you saw Chrome Browser was opened and closed, and no errors in console log - this means you are good to go!
-    Please check README.md in generated project for details.
-    `);
+    this.log(chalk.bold(
+    `
+**************************************************  
+    Project generation is finished!
+
+    Now generated project will be verified
+**************************************************    
+    `));
   }
 };
