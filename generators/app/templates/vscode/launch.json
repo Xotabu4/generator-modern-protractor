@@ -14,14 +14,6 @@
                 "${workspaceRoot}/config/protractor.conf.js"
             ],
             "outFiles": []
-        },
-        {
-            "type": "node",
-            "request": "attach",
-            "name": "Attach to Process",
-            "address": "localhost",
-            "port": 5858,
-            "outFiles": []
         }
     ]
 }

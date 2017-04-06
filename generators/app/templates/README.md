@@ -1,4 +1,3 @@
-### Welcome to fresh ProtractorJS project!
+### <%=testProjectName%>
 
-ui-functional-tests
 //TODO: write something here

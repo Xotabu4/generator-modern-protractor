@@ -23,12 +23,15 @@ Ciklum loves Open Source!
 
 This ${chalk.bold('generator-modern-protractor')} will create new and shiny protractorjs automation project in current folder!
 
-
-
-
+To make this happen you should have Chrome browser installed.
 `;
 
 module.exports = class extends Generator {
+  constructor(args, opts) {
+    super(args, opts);
+    // This method adds support for a `--coffee` flag
+    this.option('noTestRun');
+  }
   prompting() {
     this.log(welcome);
     var prompts = [
@@ -43,34 +46,35 @@ module.exports = class extends Generator {
         name: 'baseUrl',
         message: 'Then - enter a URL for website that you want to test? This will be used as baseUrl property',
         default: 'http://www.protractortest.org/testapp/ng1/'
+      },
+      {
+        type: 'list',
+        name: 'usedIde',
+        message: 'What IDE do you use? This will be used to set up debug configuration',
+        default: 0,
+        // WebStorm support will be added in future versions. No available license.
+        choices: ['Visual Studio Code', 'WebStorm', 'Other']
       }
-      // {
-      //   type: 'list',
-      //   name: 'browsers',
-      //   message: 'Which browsers do you want to run?',
-      //   default: 0,
-      //   choices: ['Chrome', 'Firefox', 'Both, at the same time']
-      // }
     ];
 
     return this.prompt(prompts).then(props => {
-      // To access props later use this.props.someAnswer;
+      // To access props later use this.props.usedIde;
       this.props = props;
     });
   }
 
   writing() {
-    console.log('Props are:', this.props);
-
     this.fs.copy(
       this.templatePath(`gitignore`),
       this.destinationPath(`.gitignore`)
     );
 
-    this.fs.copy(
-      this.templatePath(`vscode/`),
-      this.destinationPath(`.vscode/`)
-    );
+    if (this.props.usedIde === 0) {
+      this.fs.copy(
+        this.templatePath(`vscode/`),
+        this.destinationPath(`.vscode/`)
+      );
+    }
 
     this.fs.copyTpl(
       this.templatePath(`**/*.*`),
@@ -83,7 +87,10 @@ module.exports = class extends Generator {
     this.installDependencies({
       bower: false,
       callback: () => {
-        this.spawnCommand('npm', ['test']);
+        if (!this.options.noTestRun) {
+          console.log('Installing of dependencies finished, verifying browser and framework is setted up correctly...');
+          this.spawnCommand('npm', ['test']);
+        }
       }
     });
   }
