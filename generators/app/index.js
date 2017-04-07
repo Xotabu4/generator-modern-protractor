@@ -64,23 +64,25 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    this.fs.copy(
-      this.templatePath(`gitignore`),
-      this.destinationPath(`.gitignore`)
-    );
-
-    if (this.props.usedIde === 0) {
-      this.fs.copy(
-        this.templatePath(`vscode/`),
-        this.destinationPath(`.vscode/`)
-      );
-    }
-
+    this.log(this.props);
+    // { globOptions: { dot: true } }
     this.fs.copyTpl(
-      this.templatePath(`**/*.*`),
+      [this.templatePath('**'),
+        '!vscode/'],
       this.destinationRoot(),
       this.props
     );
+    this.fs.copy(
+      this.templatePath('gitignore'),
+      this.destinationPath(`.gitignore`)
+    );
+    if (this.props.usedIde === 'Visual Studio Code') {
+      this.fs.copy(
+        this.templatePath('vscode/'),
+        this.destinationPath() + '/.vscode/',
+        {dot: true}
+      );
+    }
   }
 
   install() {
@@ -97,7 +99,7 @@ module.exports = class extends Generator {
 
   end() {
     this.log(chalk.bold(
-    `
+      `
 **************************************************  
     Project generation is finished!
 
