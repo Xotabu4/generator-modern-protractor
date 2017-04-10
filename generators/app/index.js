@@ -51,7 +51,7 @@ module.exports = class extends Generator {
         type: 'list',
         name: 'usedIde',
         message: 'What IDE do you use? This will be used to set up debug configuration',
-        default: 0,
+        default: 'Visual Studio Code',
         // WebStorm support will be added in future versions. No available license.
         choices: ['Visual Studio Code', 'WebStorm', 'Other']
       }
@@ -64,23 +64,27 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    this.fs.copy(
-      this.templatePath(`gitignore`),
-      this.destinationPath(`.gitignore`)
-    );
-
-    if (this.props.usedIde === 0) {
-      this.fs.copy(
-        this.templatePath(`vscode/`),
-        this.destinationPath(`.vscode/`)
-      );
-    }
-
+    this.log(this.props);
+    // { globOptions: { dot: true } }
     this.fs.copyTpl(
-      this.templatePath(`**/*.*`),
+      [this.templatePath('**'),
+        '!vscode/'],
       this.destinationRoot(),
       this.props
     );
+    this.fs.copy(
+      this.templatePath('gitignore'),
+      this.destinationPath(`.gitignore`)
+    );
+    if (this.props.usedIde === 'Visual Studio Code') {
+      this.fs.copy(
+        this.templatePath('vscode/'),
+        this.destinationPath() + '/.vscode/',
+        {dot: true}
+      );
+    }
+    // Killing extracopied folder.
+    this.fs.delete(this.destinationPath('vscode'));
   }
 
   install() {
@@ -97,7 +101,7 @@ module.exports = class extends Generator {
 
   end() {
     this.log(chalk.bold(
-    `
+      `
 **************************************************  
     Project generation is finished!
 
