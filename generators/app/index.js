@@ -29,12 +29,12 @@ To make this happen you should have Chrome browser installed.
 module.exports = class extends Generator {
   constructor(args, opts) {
     super(args, opts);
-    // This method adds support for a `--coffee` flag
+    // Debug purposes. Disable after instalation verifications.
     this.option('noTestRun');
   }
   prompting() {
     this.log(welcome);
-    var prompts = [
+    const questions = [
       {
         type: 'input',
         name: 'testProjectName',
@@ -50,14 +50,32 @@ module.exports = class extends Generator {
       {
         type: 'list',
         name: 'usedIde',
-        message: 'What IDE do you use? This will be used to set up debug configuration',
+        message: 'What IDE do you use?',
         default: 'Visual Studio Code',
         // WebStorm support will be added in future versions. No available license.
-        choices: ['Visual Studio Code', 'WebStorm', 'Other']
+        choices: [
+          'Visual Studio Code',
+          'WebStorm',
+          'Other'
+        ]
+      },
+      {
+        type: 'confirm',
+        name: 'hideCompiledJs',
+        message: 'Hide node_modules/ and compiled *.js, *.map.js in Visual Studio Code? (they will still exist in filesystem)',
+        default: true,
+        // Ask only when ide is visual studio code
+        when: answers => answers.usedIde === 'Visual Studio Code'
+      },
+      {
+        type: 'confirm',
+        name: 'useTSlint',
+        default: true,
+        message: 'Do you want to use TS linter with some basic rules?'
       }
     ];
 
-    return this.prompt(prompts).then(props => {
+    return this.prompt(questions).then(props => {
       // To access props later use this.props.usedIde;
       this.props = props;
     });
@@ -79,8 +97,18 @@ module.exports = class extends Generator {
       this.fs.copy(
         this.templatePath('vscode/'),
         this.destinationPath() + '/.vscode/',
-        {dot: true}
+        {
+          dot: true
+        }
       );
+      if (!this.props.hideCompiledJs) {
+        // Removing workspace settings that contain this setting
+        this.fs.delete(this.destinationPath('.vscode/settings.json'));
+      }
+    }
+
+    if (!this.props.useTSlint) {
+      this.fs.delete(this.destinationPath('tslint.json'));
     }
     // Killing extracopied folder. TODO: find way to ignore files. '!gitignore' does not work
     this.fs.delete(this.destinationPath('vscode'));
