@@ -83,6 +83,8 @@ module.exports = class extends Generator {
         {dot: true}
       );
     }
+    // Killing extracopied folder.
+    this.fs.delete(this.destinationPath('vscode'));
   }
 
   install() {
