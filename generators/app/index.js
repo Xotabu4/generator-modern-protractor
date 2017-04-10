@@ -51,7 +51,7 @@ module.exports = class extends Generator {
         type: 'list',
         name: 'usedIde',
         message: 'What IDE do you use? This will be used to set up debug configuration',
-        default: 0,
+        default: 'Visual Studio Code',
         // WebStorm support will be added in future versions. No available license.
         choices: ['Visual Studio Code', 'WebStorm', 'Other']
       }

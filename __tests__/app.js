@@ -4,11 +4,10 @@ var assert = require('yeoman-assert');
 var helpers = require('yeoman-test');
 
 describe('generator-modern-protractor:app', () => {
-
   let promptsAnswers = {
     testProjectName: 'ui-functional-tests',
     baseUrl: 'http://www.protractortest.org/testapp/ng1/',
-    usedIde: 0
+    usedIde: 'Visual Studio Code'
   };
 
   beforeAll(() => {
@@ -59,12 +58,11 @@ describe('generator-modern-protractor:app', () => {
 });
 
 describe('generator-modern-protractor:app', function () {
-
   beforeAll(() => {
     let promptsAnswers = {
       testProjectName: 'ui-functional-tests',
       baseUrl: 'http://www.protractortest.org/testapp/ng1/',
-      usedIde: 1 // WebStorm
+      usedIde: 'WebStorm'
     };
     return helpers.run(path.join(__dirname, '../generators/app'))
       .withPrompts(promptsAnswers)
