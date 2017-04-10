@@ -67,8 +67,7 @@ module.exports = class extends Generator {
     this.log(this.props);
     // { globOptions: { dot: true } }
     this.fs.copyTpl(
-      [this.templatePath('**'),
-        '!vscode/'],
+      this.templatePath('**'),
       this.destinationRoot(),
       this.props
     );
@@ -83,8 +82,9 @@ module.exports = class extends Generator {
         {dot: true}
       );
     }
-    // Killing extracopied folder.
+    // Killing extracopied folder. TODO: find way to ignore files. '!gitignore' does not work
     this.fs.delete(this.destinationPath('vscode'));
+    this.fs.delete(this.destinationPath('gitignore'));
   }
 
   install() {
