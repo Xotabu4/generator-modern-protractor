@@ -54,3 +54,22 @@ Reporting is done using packages -
 - jUnit xml reporting - [jasmine-reporters](https://github.com/larrymyers/jasmine-reporters)
 
 Use generated XML with your continious integration system, so you won't need to generate any HTML reports from tests. By default output directory with xml results is `test_results/`
+<% if (useTSlint) { %>
+#### [TSLint](https://palantir.github.io/tslint/)
+
+Project includes static code analysis. The most profit comes when your IDE is configured to execute analysis in watch mode. This will work automaticaly by installing plugins:
+
+[TSLint in WebStorm](https://www.jetbrains.com/help/webstorm/2016.1/tslint.html)
+
+[TSLint in Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=eg2.tslint)
+
+Also TSLint will fail your `pre-test` task, if there is any errors. You can always switch errors to warnings in `tslint.json`: 
+```
+"defaultSeverity": "error",
+``` 
+To
+
+```
+"defaultSeverity": "warning",
+```
+<% } %>

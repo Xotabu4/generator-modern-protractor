@@ -6,6 +6,7 @@
     "test": "(cd config/ ; protractor)",
     "tsc": "tsc",
     "tscw": "tsc -w"<% if (useTSlint) { %>,
+    "pretest": "npm run tslint",
     "tslint": "tslint **/*.ts --exclude=node_modules/ --out=test_results/tslint.log"<% } %>      
   },
   "devDependencies": {

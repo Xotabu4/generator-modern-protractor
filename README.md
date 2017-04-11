@@ -11,7 +11,8 @@
 - PageFragments (Components) using [protractor-element-extend](https://github.com/Xotabu4/protractor-element-extend) library
 - Additional [jasmine-protractor-matchers](https://github.com/Xotabu4/jasmine-protractor-matchers) to verify elements visibility easily
 - Reporting made possible by nice [console reporter](https://github.com/razvanz/jasmine2-reporter) and [junit.xml reporter](https://github.com/larrymyers/jasmine-reporters) (to provide test results to your CI system)
-- If you are using Visual Studio Code IDE - debug with TypeScript compilation is configured
+- [TSLint](https://palantir.github.io/tslint/) is included and configured with `pre-test` npm task ready
+- If you are using Visual Studio Code as IDE - debug with TypeScript compilation is configured, and hidding of compiled *.js and *.map.js files is supported
 - Post conditions are added - wiping cookies, local and session storage after each test
 
 ## Installation and generation of project
