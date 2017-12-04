@@ -1,5 +1,6 @@
 import { Config, browser } from 'protractor'
 
+
 // Full protractor configuration file reference could be found here:
 // https://github.com/angular/protractor/blob/master/lib/config.ts
 
@@ -11,7 +12,7 @@ let conf: Config = {
     '../specs/*.spec.js'
   ],
 
-  baseUrl: 'http://website.com/',
+  baseUrl: '<%=baseUrl%>',
 
   onPrepare: () => {
 
@@ -32,7 +33,7 @@ let conf: Config = {
       consolidateAll: true
     }
     jasmine.getEnv().addReporter(new JUnitXmlReporter(junit_reporter_options))
-      const protractorMatchers = require('jasmine-protractor-matchers');
+      var protractorMatchers = require('jasmine-protractor-matchers');
 
     // Specifying global beforeEach and afterEach jasmine2 hooks.
     beforeEach(() => {

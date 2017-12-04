@@ -1,5 +1,5 @@
 import { browser, element, by, ExpectedConditions, $, $$ } from 'protractor'
-import { Login } from "../page_objects/login.page"
+import { Login } from "../page_objects/home.page"
 import matchers = require('jasmine-protractor-matchers')
 
 describe('first login', function () {

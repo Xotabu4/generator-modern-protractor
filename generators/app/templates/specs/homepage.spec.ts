@@ -1,5 +1,5 @@
 import { browser, ExpectedConditions as EC, $, $$ } from 'protractor'
-import { Login } from "../page_objects/login.page"
+import { HomePage } from "../page_objects/home.page"
 
 // Unfortunatelly had to loose types here.
 // Extending jasmine matchers does not work well -
@@ -8,7 +8,7 @@ declare let expect:any
 
 describe('Verifying project generation ', function () {
     beforeEach(async () => {
-        await new Login().open()
+        await new HomePage().open()
     })
 
     it('Checking that created project can start and communicate with browser', async function () {
