@@ -10,7 +10,7 @@ let conf: Config = {
     '../specs/**/*.spec.js',
     '../specs/*.spec.js'
   ],
-  baseUrl: 'http://build-a-list-test.com/',
+  baseUrl: 'http://my-web-site.com/',
 
   onPrepare: () => {
     // Adding nice console output. 
