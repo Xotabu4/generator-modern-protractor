@@ -10,11 +10,8 @@ let conf: Config = {
     '../specs/**/*.spec.js',
     '../specs/*.spec.js'
   ],
-<<<<<<< HEAD
+
   baseUrl: 'http://website.com/',
-=======
-  baseUrl: 'http://website.com/',
->>>>>>> origin/master
 
   onPrepare: () => {
     // Adding nice console output.
