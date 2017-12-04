@@ -10,10 +10,10 @@ let conf: Config = {
     '../specs/**/*.spec.js',
     '../specs/*.spec.js'
   ],
-  baseUrl: 'http://build-a-list-test.com/',
+  baseUrl: 'http://website.com/',
 
   onPrepare: () => {
-    // Adding nice console output. 
+    // Adding nice console output.
     // Provided by: https://github.com/razvanz/jasmine2-reporter
 
     let ConsoleReporter = require('jasmine2-reporter').Jasmine2Reporter
