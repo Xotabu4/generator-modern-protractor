@@ -14,6 +14,7 @@ let conf: Config = {
   baseUrl: 'http://website.com/',
 
   onPrepare: () => {
+
     // Adding nice console output.
     // Provided by: https://github.com/razvanz/jasmine2-reporter
 
