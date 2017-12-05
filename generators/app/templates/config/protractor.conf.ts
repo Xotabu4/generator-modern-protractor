@@ -35,7 +35,6 @@ let conf: Config = {
     beforeEach(() => {
       // Adding .toAppear() and .toDisappear() into available matchers.
       // https://github.com/Xotabu4/jasmine-protractor-matchers
-      let matchers = require('jasmine-protractor-matchers')
       jasmine.addMatchers(protractorMatchers);
     });
 
