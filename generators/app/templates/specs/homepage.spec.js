@@ -37,14 +37,12 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 exports.__esModule = true;
 var protractor_1 = require("protractor");
 var home_page_1 = require("../page_objects/home.page");
-const matchers = require("jasmine-protractor-matchers");
 describe('Verifying project generation ', function () {
     var _this = this;
     beforeEach(function () { return __awaiter(_this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    jasmine.addMatchers(matchers);
                     return [4 /*yield*/, new home_page_1.HomePage().open()];
                 case 1:
                     _a.sent();

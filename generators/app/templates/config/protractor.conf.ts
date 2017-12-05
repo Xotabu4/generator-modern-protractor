@@ -15,7 +15,7 @@ let conf: Config = {
   onPrepare: () => {
     // Adding nice console output.
     // Provided by: https://github.com/razvanz/jasmine2-reporter
-    var protractorMatchers = require('jasmine-protractor-matchers');
+    let protractorMatchers = require('jasmine-protractor-matchers');
     let ConsoleReporter = require('jasmine2-reporter').Jasmine2Reporter
     let console_reporter_options = {
       startingSpec: true
