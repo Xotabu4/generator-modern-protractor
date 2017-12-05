@@ -1,0 +1,7 @@
+# installed npm dependencies
+node_modules/
+# compiled js and debug files
+*.js
+*.js.map
+# test run results
+test_results/

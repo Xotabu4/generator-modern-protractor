@@ -1,6 +1,5 @@
 import { Config, browser } from 'protractor'
 
-
 // Full protractor configuration file reference could be found here:
 // https://github.com/angular/protractor/blob/master/lib/config.ts
 
@@ -11,15 +10,13 @@ let conf: Config = {
     '../specs/**/*.spec.js',
     '../specs/*.spec.js'
   ],
-
   baseUrl: '<%=baseUrl%>',
 
   onPrepare: () => {
-
-    // Adding nice console output.
+    // Adding nice console output. 
     // Provided by: https://github.com/razvanz/jasmine2-reporter
-
     let ConsoleReporter = require('jasmine2-reporter').Jasmine2Reporter
+    var protractorMatchers = require('jasmine-protractor-matchers');
     let console_reporter_options = {
       startingSpec: true
     }
@@ -33,14 +30,13 @@ let conf: Config = {
       consolidateAll: true
     }
     jasmine.getEnv().addReporter(new JUnitXmlReporter(junit_reporter_options))
-      var protractorMatchers = require('jasmine-protractor-matchers');
 
     // Specifying global beforeEach and afterEach jasmine2 hooks.
     beforeEach(() => {
       // Adding .toAppear() and .toDisappear() into available matchers.
       // https://github.com/Xotabu4/jasmine-protractor-matchers
-        jasmine.addMatchers(protractorMatchers);
-
+      let matchers = require('jasmine-protractor-matchers')
+      jasmine.addMatchers(protractorMatchers);
     });
 
     afterEach(async () => {
