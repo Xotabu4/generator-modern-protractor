@@ -25,13 +25,14 @@
     "yeoman-generator"
   ],
   "devDependencies": {
-    "yeoman-test": "^1.6.0",
-    "yeoman-assert": "^3.0.0",
-    "nsp": "^3.1.0",
     "eslint": "^4.11.0",
     "eslint-config-xo-space": "^0.17.0",
+    "jasmine-protractor-matchers": "^2.0.0",
     "jest": "^21.2.1",
-    "jest-cli": "^21.2.1"
+    "jest-cli": "^21.2.1",
+    "nsp": "^3.1.0",
+    "yeoman-assert": "^3.0.0",
+    "yeoman-test": "^1.6.0"
   },
   "dependencies": {
     "yeoman-generator": "^2.0.1",

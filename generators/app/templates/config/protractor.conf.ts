@@ -13,8 +13,9 @@ let conf: Config = {
   baseUrl: '<%=baseUrl%>',
 
   onPrepare: () => {
-    // Adding nice console output. 
+    // Adding nice console output.
     // Provided by: https://github.com/razvanz/jasmine2-reporter
+    let protractorMatchers = require('jasmine-protractor-matchers');
     let ConsoleReporter = require('jasmine2-reporter').Jasmine2Reporter
     let console_reporter_options = {
       startingSpec: true
@@ -35,7 +36,7 @@ let conf: Config = {
       // Adding .toAppear() and .toDisappear() into available matchers.
       // https://github.com/Xotabu4/jasmine-protractor-matchers
       let matchers = require('jasmine-protractor-matchers')
-      jasmine.addMatchers(matchers);
+      jasmine.addMatchers(protractorMatchers);
     });
 
     afterEach(async () => {
