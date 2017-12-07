@@ -1,5 +1,5 @@
 import { Config, browser } from 'protractor'
-import { protractorMatchers } from 'jasmine-protractor-matchers'
+import matchers = require('jasmine-protractor-matchers');
 
 // Full protractor configuration file reference could be found here:
 // https://github.com/angular/protractor/blob/master/lib/config.ts
@@ -17,7 +17,6 @@ let conf: Config = {
     // Adding nice console output. 
     // Provided by: https://github.com/razvanz/jasmine2-reporter
     let ConsoleReporter = require('jasmine2-reporter').Jasmine2Reporter
-    var protractorMatchers = require('jasmine-protractor-matchers');
     let console_reporter_options = {
       startingSpec: true
     }
@@ -34,10 +33,9 @@ let conf: Config = {
 
     // Specifying global beforeEach and afterEach jasmine2 hooks.
     beforeEach(() => {
-      jasmine.addMatchers(protractorMatchers);
       // Adding .toAppear() and .toDisappear() into available matchers.
       // https://github.com/Xotabu4/jasmine-protractor-matchers
-      
+      jasmine.addMatchers(matchers)
     });
 
     afterEach(async () => {
