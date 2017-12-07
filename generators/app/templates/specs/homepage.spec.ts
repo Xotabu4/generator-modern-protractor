@@ -1,6 +1,5 @@
 import { browser, ExpectedConditions as EC, $, $$ } from 'protractor'
 import { HomePage } from '../page_objects/home.page'
-import protractorMatchers = require('jasmine-protractor-matchers');
 
 describe('Verifying project generation ', function () {
     beforeEach(async () => {
