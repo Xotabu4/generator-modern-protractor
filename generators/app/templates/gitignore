@@ -5,3 +5,5 @@ node_modules/
 *.js.map
 # test run results
 test_results/
+# exception is configuration file, since it can't be .ts
+!protractor.conf.js

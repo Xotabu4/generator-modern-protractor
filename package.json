@@ -50,7 +50,11 @@
     "extends": "xo-space",
     "env": {
       "jest": true,
+      "jasmine": true,
       "node": true
+    },
+    "globals": {
+      "browser": true
     }
   },
   "license": "MIT"
