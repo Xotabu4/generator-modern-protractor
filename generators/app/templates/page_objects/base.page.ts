@@ -1,9 +1,9 @@
-import { browser } from 'protractor'
+import { browser } from "protractor";
 
 export abstract class BasePage {
-    protected url: string = '' // Will be same as baseUrl by default.
+  protected url: string = ""; // Will be same as baseUrl by default.
 
-    async open() {
-        return await browser.get(this.url)
-    }
+  async open() {
+    return await browser.get(this.url);
+  }
 }

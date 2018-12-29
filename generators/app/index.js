@@ -26,11 +26,12 @@ You should have Chrome browser installed.
 `;
 
 module.exports = class extends Generator {
-  constructor(args, opts) {
-    super(args, opts);
-    // Debug purposes. Disable after instalation verifications.
-    this.option("noTestRun");
-  }
+  // A
+  // constructor(args, opts) {
+  //   super(args, opts);
+  //   // Debug purposes. Disable after instalation verifications.
+  //   // this.option("noTestRun");
+  // }
 
   prompting() {
     this.log(welcome);
