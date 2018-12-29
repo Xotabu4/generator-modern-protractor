@@ -2,8 +2,8 @@
   "name": "<%=testProjectName%>",
   "version": "1.0.0",
   "scripts": {
-    "postinstall": "webdriver-manager update && tsc",
-    "test": "node -r ./node_modules/ts-node ./node_modules/protractor/bin/protractor ./config/protractor.conf.ts"
+    "postinstall": "webdriver-manager update",
+    "test": "protractor config/config.js"
   },
   "devDependencies": {
     "@types/jasmine": "^2.5.38",

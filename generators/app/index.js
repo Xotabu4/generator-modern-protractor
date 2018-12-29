@@ -84,30 +84,33 @@ module.exports = class extends Generator {
 
   install() {
     this.installDependencies({
-      bower: false,
-      callback: () => {
-        if (this.options.noTestRun) {
-          return;
-        }
-        console.log(
-          "Installing of dependencies finished, verifying browser and framework is setted up correctly..."
-        );
-        this.spawnCommand("npm", ["test"]);
-      }
+      bower: false
     });
   }
 
   end() {
-    this.log(
-      chalk.bold(
-        `
-**************************************************  
-    Project generation is finished!
-
-    Now generated project will be verified
-**************************************************    
-    `
+    console.log(
+      chalk.black.bgGreen("Installing of project dependencies finished")
+    );
+    console.log(
+      chalk.black.bgWhite(
+        "Verifying that framework can communicate to browser and execute tests"
       )
     );
+    if (this.options.noTestRun) {
+      // For Unit testing
+      console.log(chalk.bold.black.bgGreen("Project verification is skipped"));
+      return;
+    }
+    const done = this.async();
+    this.spawnCommand("npm", ["test"]).on("exit", () => {
+      console.log(
+        chalk.bold.black.bgGreen(`
+**************************************************  
+      Project generation is finished!
+**************************************************`)
+      );
+      done();
+    });
   }
 };

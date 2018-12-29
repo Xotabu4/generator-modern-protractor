@@ -1,5 +1,5 @@
 import { Config } from "protractor";
-// Loosing types in this file since: 
+// Loosing types in this file since:
 declare const browser: any;
 
 // Full protractor configuration file reference could be found here:
@@ -7,7 +7,7 @@ declare const browser: any;
 const protractorConfig: Config = {
   // Connecting directly to ChromeDriverServer
   directConnect: true,
-  specs: ["../specs/**/*.spec.js", "../specs/*.spec.js"],
+  specs: ["../specs/**/*.spec.ts", "../specs/*.spec.ts"],
   baseUrl: "<%=baseUrl%>",
 
   onPrepare: () => {
