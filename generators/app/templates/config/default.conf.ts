@@ -48,4 +48,4 @@ const protractorConfig: Config = {
   SELENIUM_PROMISE_MANAGER: false
 };
 
-exports.config = protractorConfig;
+exports.config = conf;
