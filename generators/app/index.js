@@ -90,15 +90,19 @@ module.exports = class extends Generator {
 
   end() {
     console.log(
-      chalk.black.bgGreen(`Installing of project dependencies finished
-      #####
-      `)
+      chalk.bold.black.bgGreen(`
+**************************************************  
+      Installing of project dependencies finished!
+**************************************************`)
     );
+
     console.log(
-      chalk.black.bgGreen(
-        "Verifying that framework can communicate to browser and execute tests"
-      )
+      chalk.bold.black.bgGreen(`
+**************************************************  
+      Verifying that framework can communicate to browser and execute tests...
+**************************************************`)
     );
+
     if (this.options.noTestRun) {
       // For Unit testing
       console.log(chalk.bold.black.bgGreen("Project verification is skipped"));

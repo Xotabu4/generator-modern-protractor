@@ -12,10 +12,6 @@
       "args": ["install"]
     },
     {
-      "taskName": "update",
-      "args": ["run", "update"]
-    },
-    {
       "taskName": "test",
       "args": ["run", "test"]
     }

@@ -10,7 +10,7 @@
       "name": "Debug",
       "program": "${workspaceRoot}/node_modules/protractor/bin/protractor",
       "args": [
-        "${workspaceRoot}/config/protractor.conf.js",
+        "${workspaceRoot}/config/config.js",
         // Change to path to spec that should be debugged
         // "--specs='./specs/user.settings.spec.ts'",
         // "--grep='C1233'"

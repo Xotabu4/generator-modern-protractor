@@ -3,9 +3,9 @@
 > Yeoman generator for ProtractorJS projects. Generates new project with ProtractorJS using most modern and shiny approaches.
 
 ## Whats inside?
-- ProtractorJS 5.1.1
-- TypeScript 2.2
-- JasmineJS (as Protractor 5.1.1 dependency)
+- ProtractorJS 5.4.2
+- TypeScript 3.5.3
+- JasmineJS (as Protractor 5.4.2 dependency)
 - Async/Await support, WebdriverJS ControlFlow is disabled
 - PageObjects using [ES6 classes](http://es6-features.org/#ClassDefinition)
 - PageFragments (Components) using [protractor-element-extend](https://github.com/Xotabu4/protractor-element-extend) library
@@ -33,6 +33,11 @@ Then generate your new project (will be unpacked in current location, no subfold
 ```bash
 yo modern-protractor
 ```
+
+Follow instructions that will appear in terminal, to provide project name and baseUrl properties.
+
+After generation, dependencies should be installed automatically, chromedriver downloaded and super-simple test will be executed.
+If everyting is passed correctly - you are good to go! Open README.MD in newly generated project and follow its instructions.
 
 Feel free to [learn more about Yeoman](http://yeoman.io/).
 
