@@ -19,22 +19,18 @@ First, do:
 `npm install`
 
 Instalation has `postinstall` hook, that triggers `webdriver-manager update` so you should have fresh chromedriver and selenium server downloaded and prepared.
-
-Then compile your TypeScript code to JavaScript:
-
-`npm run tsc`
+If you need to update chromedriver, remove node_modules folder, and do `npm install` again.
 
 Then, start tests:
-
 `npm test`
 
 By default - dirrect connect to local chrome driver is used. 
 
-If you tired with running `npm run tsc` after each change, consider using compiler in `watch` mode:
-`npm run tscw` with this compiler would automatically watch changed files, and compile them in real-time.
+#### Typescript
+Compilation to typescript is done automatically, on the fly, and should not require any setup. Is is done thru using `ts-node` module. To learn more check ts-node readme: [TS-NODE](https://www.npmjs.com/package/ts-node)
 
 #### Debug
-Debugging is already configured for Visual Studio Code - you should be able to put your breakpoints, and start debugging by running `Debug protractor.conf.js` in debug panel. Pre-debug compilation of TypeScript files is also configured.
+Debugging is already configured for Visual Studio Code - you should be able to put your breakpoints, and start debugging by running `Debug protractor.conf.js` in debug panel.
 
 This is done by `.vscode/launch.json` and `.vscode/tasks.json`. I suggest to keep this files in your repo.
 

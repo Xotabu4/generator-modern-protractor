@@ -2,19 +2,18 @@
   "name": "<%=testProjectName%>",
   "version": "1.0.0",
   "scripts": {
-    "postinstall": "webdriver-manager update && tsc",
-    "test": "protractor ./config/protractor.conf.js",
-    "tsc": "tsc",
-    "tscw": "tsc -w"
+    "postinstall": "webdriver-manager update",
+    "test": "protractor config/config.js"
   },
   "devDependencies": {
-    "@types/jasmine": "^2.5.38",
-    "@types/node": "^7.0.0",
+    "@types/jasmine": "2.8.16",
+    "@types/node": "^10.0.0",
     "jasmine-protractor-matchers": "^2.0.0",
-    "jasmine2-reporter": "^0.3.0",
-    "jasmine-reporters": "^2.2.1",
-    "protractor": "^5.1.1",
-    "protractor-element-extend": "^2.0.1",
-    "typescript": "^2.2.2"
+    "jasmine2-reporter": "^1.0.1",
+    "jasmine-reporters": "^2.3.2",
+    "protractor": "5.4.2",
+    "protractor-element-extend": "^2.1.0",
+    "typescript": "3.5.3",
+    "ts-node": "8.3.0"
   }
 }
