@@ -23,7 +23,7 @@ const protractorConfig: Config = {
     // Provided by: https://github.com/larrymyers/jasmine-reporters
     const JUnitXmlReporter = require("jasmine-reporters").JUnitXmlReporter;
     const junit_reporter_options = {
-      savePath: "../test_results/",
+      savePath: "./test_results/",
       consolidateAll: true
     };
     jasmine.getEnv().addReporter(new JUnitXmlReporter(junit_reporter_options));
