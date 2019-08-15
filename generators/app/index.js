@@ -90,10 +90,12 @@ module.exports = class extends Generator {
 
   end() {
     console.log(
-      chalk.black.bgGreen("Installing of project dependencies finished")
+      chalk.black.bgGreen(`Installing of project dependencies finished
+      #####
+      `)
     );
     console.log(
-      chalk.black.bgWhite(
+      chalk.black.bgGreen(
         "Verifying that framework can communicate to browser and execute tests"
       )
     );
