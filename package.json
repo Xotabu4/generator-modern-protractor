@@ -23,7 +23,7 @@
     "webdriverjs"
   ],
   "devDependencies": {
-    "yeoman-test": "^1.9.1",
+    "yeoman-test": "^2.0.0",
     "yeoman-assert": "^3.1.1",
     "eslint": "^5.11.0",
     "prettier": "^1.15.3",
