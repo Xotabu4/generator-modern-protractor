@@ -11,9 +11,12 @@
       "program": "${workspaceRoot}/node_modules/protractor/bin/protractor",
       "args": [
         "${workspaceRoot}/config/config.js",
-        // Change to path to spec that should be debugged
-        // "--specs='./specs/user.settings.spec.ts'",
-        // "--grep='C1233'"
+        // "--specs"
+        // Change to path to single spec file that should be debugged
+        // "./specs/user.settings.spec.ts",
+        // "--grep", 
+        // Use this to run only tests names that includes matching string
+        // "C1233"
       ],
       "env": {
         "DEBUG": "1"

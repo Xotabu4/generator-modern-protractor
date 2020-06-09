@@ -1,12 +1,12 @@
 {
   "name": "generator-modern-protractor",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Yeoman generator for protractorJS projects, with TypeScript, async/await, PageFragments, nice console and junit.xml output, screenshots on failure, JasmineJS, matchers for elements",
   "homepage": "https://xotabu4.github.io/generator-modern-protractor/",
   "author": {
     "name": "Oleksandr Khotemskyi",
     "email": "xotabu4@gmail.com",
-    "url": "xotabu4.github.io"
+    "url": "http://xotabu4.github.io"
   },
   "files": [
     "generators"
