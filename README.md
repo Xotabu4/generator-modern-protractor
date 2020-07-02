@@ -1,4 +1,4 @@
-# generator-modern-protractor [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+# generator-modern-protractor [![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
 > Yeoman generator for ProtractorJS projects. Generates new project with ProtractorJS using most modern and shiny approaches.
 
