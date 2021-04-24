@@ -1,3 +1,8 @@
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
+# This library is deprecated and won't be updated in future, since protractor support is ending as well: https://github.com/angular/protractor/issues/5502
+
+
 # generator-modern-protractor [![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
 > Yeoman generator for ProtractorJS projects. Generates new project with ProtractorJS using most modern and shiny approaches.
